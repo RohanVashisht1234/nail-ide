@@ -5,16 +5,15 @@ use egui_notify::Toasts;
 use std::time::Duration;
 
 // hide console window on Windows in release
-use eframe::egui::{self, Color32, Label, RichText};
+use eframe::egui::{self, Color32, RichText};
 use egui::menu;
 use egui_code_editor::{self, CodeEditor, ColorTheme, Syntax};
-use egui_modal::{Icon, Modal, ModalStyle};
 
 fn main() -> Result<(), eframe::Error> {
     let mut status = "Status:Fine";
-    let mut fontsize = 15.0;
+    let fontsize = 15.0;
     let mut content = "Rohan Vashisht".to_string();
-    let mut open_file = "".to_string();
+    let open_file = "".to_string();
     // Log to stderr (if you run with `RUST_LOG=debug`).
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default().with_inner_size([520.0, 540.0]),
@@ -36,8 +35,7 @@ fn main() -> Result<(), eframe::Error> {
                             println!("No file selected");
                         }
                     }
-                    if ui.button("New").clicked() {
-                    }
+                    ui.button("New").clicked();
                     if ui.button("New Syntax").clicked() {
                         let mut toasts = Toasts::default();
                         toasts.info("Feature not available").set_duration(Some(Duration::from_secs(5)));
