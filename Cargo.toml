@@ -6,9 +6,17 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-colorful = "0.2.2"
 eframe = "0.27.2"
 egui-modal = "0.3.6"
 egui-notify = "0.14.0"
 egui_code_editor = "0.2.7"
 rfd = "0.14.1"
+
+
+[profile.release]
+# v This is now used by default, if not provided
+strip = "debuginfo"
+opt-level = "z" 
+lto = true
+codegen-units = 1
+panic = "abort"
