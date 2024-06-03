@@ -1,7 +1,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use std::fs;
 
-use egui_modal::{Icon, Modal};
+use egui_modal::Modal;
 
 use egui_notify::Toasts;
 use std::time::Duration;
